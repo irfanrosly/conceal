@@ -7,7 +7,10 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean": "rm -rf node-modules/ && yarn",
+    "android:clean": "cd android && ./gradlew clean && cd ..",
+    "pod:install": "cd ios && pod install && cd .."
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.7",

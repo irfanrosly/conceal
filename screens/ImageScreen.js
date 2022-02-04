@@ -31,16 +31,17 @@ const ImageScreen: () => Node = () => {
 
       <View style={styles.containerOne}>
         <MyCustomComponent
-          source={url !== '' ? { uri: url } : imgPlaceholder}
+          source={url ? { uri: url } : imgPlaceholder}
           priority="high"
           resizeMode="stretch"
         />
       </View>
-      <View style={styles.containerOne}>
+      <View style={styles.containerTwo}>
         <MyCustomComponent
-          source={url2 !== '' ? { uri: url2 } : imgPlaceholder}
+          source={url2 ? { uri: url2 } : imgPlaceholder}
           priority="high"
           resizeMode="stretch"
+          style={styles.eightyPercent}
         />
       </View>
     </SafeAreaView>
@@ -53,9 +54,17 @@ const styles = StyleSheet.create({
   containerOne: {
     height: 200,
     width: '60%',
-    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
   },
+  containerTwo: {
+    marginTop: 20,
+    height: 200,
+    width: '60%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  eightyPercent: { height: '80%', width: '80%' },
 });
